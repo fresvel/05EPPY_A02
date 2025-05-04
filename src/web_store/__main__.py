@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask, render_template
 
 from web_store.testing import TestWebStore
+from web_store.basket import Basket
 
 load_dotenv()
 
@@ -46,7 +47,7 @@ def dinamic(dinamic):
 
 def main():
     print("Initiating Web Store")
-    #print(TestWebStore.test)
+    print(TestWebStore.test)
     app.run(host='0.0.0.0', port=PORT, debug=False)
 
 if __name__ == "__main__":
