@@ -6,56 +6,76 @@
     <div class="col-md-4">
         <div class="card">
             <img src="static/img/altavoz.jpg" class="card-img-top" alt="Altavoz">
-            <div class="card-body">
+            <form class="card-body" action="add_item" method="post">
                 <h5 class="card-title">Altavoz</h5>
                 <p class="card-text">Altavoz compacto y potente con excelente calidad de sonido.</p>
-                <a href="/building" class="btn btn-primary">Ver Detalles</a>
-                <a href="#" class="btn btn-success">Añadir al Carrito</a>
-            </div>
+                <div class="quantity-control">
+                    <input type="number" value="1" name="quantity" min="1" class="form-control d-inline-block text-center" style="width: 60px;">
+                    <input type="hidden" value="altavoz" name="item">
+                </div>
+                <a href="/building" class="btn btn-primary mt-2">Ver Detalles</a>
+                <button  class="btn btn-success mt-2" type="submit">Añadir al Carrito</button>
+            </form>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card">
             <img src="static/img/laptop.jpg" class="card-img-top" alt="Laptop">
-            <div class="card-body">
+            <form class="card-body" action="add_item" method="post">
                 <h5 class="card-title">Laptop</h5>
                 <p class="card-text">Laptop moderna y ligera con alto rendimiento para trabajo y entretenimiento.</p>
-                <a href="/building" class="btn btn-primary">Ver Detalles</a>
-                <a href="#" class="btn btn-success">Añadir al Carrito</a>
-            </div>
+                <div class="quantity-control">
+                    <input type="number" value="1" min="1" name="quantity" class="form-control d-inline-block text-center" style="width: 60px;">
+                    <input type="hidden" value="laptop" name="item">
+                </div>
+                <a href="/building" class="btn btn-primary mt-2">Ver Detalles</a>
+                <button  class="btn btn-success mt-2" type="submit">Añadir al Carrito</button>
+            </form>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card">
             <img src="static/img/mouse.jpg" class="card-img-top" alt="Mouse">
-            <div class="card-body">
+            <form class="card-body" action="add_item" method="post">
                 <h5 class="card-title">Mouse</h5>
                 <p class="card-text">Mouse ergonómico y preciso, ideal para largas jornadas de trabajo.</p>
-                <a href="/building" class="btn btn-primary">Ver Detalles</a>
-                <a href="#" class="btn btn-success">Añadir al Carrito</a>
-            </div>
+                <div class="quantity-control">   
+                    <input type="number" value="1" min="1" name="quantity" class="form-control d-inline-block text-center" style="width: 60px;">
+                    <input type="hidden" value="mouse" name="item">
+                </div>
+                <a href="/building" class="btn btn-primary mt-2">Ver Detalles</a>
+                <button  class="btn btn-success mt-2" type="submit">Añadir al Carrito</button>
+            </form>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card">
             <img src="static/img/televisor.jpg" class="card-img-top" alt="Televisor">
-            <div class="card-body">
+            <form class="card-body" action="add_item" method="post">
                 <h5 class="card-title">Televisor</h5>
                 <p class="card-text">Televisor de alta definición con colores vibrantes y sonido envolvente.</p>
-                <a href="/building" class="btn btn-primary">Ver Detalles</a>
-                <a href="#" class="btn btn-success">Añadir al Carrito</a>
-            </div>
+                <div class="quantity-control">
+                    <input type="number" value="1" min="1" name="quantity" class="form-control d-inline-block text-center" style="width: 60px;">
+                    <input type="hidden" value="televisor" name="item">
+                </div>
+                <a href="/building" class="btn btn-primary mt-2">Ver Detalles</a>
+                <button  class="btn btn-success mt-2" type="submit">Añadir al Carrito</button>
+            </form>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card">
             <img src="static/img/headset.jpg" class="card-img-top" alt="Auriculares">
-            <div class="card-body">
+            <form class="card-body" action="add_item" method="post">
                 <h5 class="card-title">Auriculares</h5>
                 <p class="card-text">Auriculares cómodos con sonido envolvente y micrófono integrado.</p>
-                <a href="/building" class="btn btn-primary">Ver Detalles</a>
-                <a href="#" class="btn btn-success">Añadir al Carrito</a>
-            </div>
+                <div class="quantity-control">
+                    <input type="number" value="1" min="1" name="quantity" class="form-control d-inline-block text-center" style="width: 60px;">
+                    <input type="hidden" value="headset" name="item">
+                </div>
+                <a href="/building" class="btn btn-primary mt-2">Ver Detalles</a>
+                <button  class="btn btn-success mt-2" type="submit">Añadir al Carrito</button>
+            </form>
         </div>
     </div>
 </div>
