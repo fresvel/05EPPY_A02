@@ -4,10 +4,8 @@ from flask import Flask, render_template, session, request
 from flask import redirect, url_for
 
 from web_store.testing import TestWebStore
-from web_store.basket import Basket
 from flask_wtf.csrf import CSRFProtect
 
-#from web_store.basket import Basket
 
 load_dotenv()
 
@@ -52,11 +50,40 @@ def store():
     return render_template('login.html')
 
 
-@app.route('/basket')
+@app.route("/basket")
 def basket():
-    if "usuario" in session:
-        return render_template('basket.html')
-    return render_template('login.html')
+    if "usuario" not in session:
+        return redirect(url_for("login"))
+
+    # Simulación de productos disponibles con precios
+    catalog = {
+        "altavoz": {"product_name": "Altavoz", "price": 50},
+        "headset": {"product_name": "Headset", "price": 80},
+        "laptop": {"product_name": "Laptop", "price": 1200},
+        "mouse": {"product_name": "Mouse", "price": 25},
+        "televisor": {"product_name": "Televisor", "price": 900}
+    }
+
+    basket_raw = session.get("basket", {})
+    basket_items = []
+    basket_total = 0
+
+    for key, quantity in basket_raw.items():
+        if key in catalog:
+            item_data = catalog[key]
+            price = item_data["price"]
+            total_price = price * quantity
+            basket_items.append({
+                "id": key,  # usamos el nombre del producto como id para eliminar
+                "product_name": item_data["product_name"],
+                "quantity": quantity,
+                "price": price,
+                "total_price": total_price
+            })
+            basket_total += total_price
+
+    return render_template("basket.html", basket_items=basket_items, basket_total=basket_total)
+
 
 
 @app.route('/checkout')
@@ -73,11 +100,23 @@ def building():
     return render_template('login.html')
 
 
-@app.route('/bought')
+@app.route('/bought', methods=["POST"])
 def bought():
     if "usuario" in session:
-        return render_template('bought.html')
+        address = request.form.get("address")
+        total = request.form.get("total")
+        currency = "USD"
+        session["basket"]={}
+
+        return render_template(
+            "bought.html",
+            shipping_address=address,
+            total_price=total,
+            currency=currency
+        )
+
     return render_template('login.html')
+
 
 
 
@@ -93,6 +132,20 @@ def add_item():
             session["basket"] = basket
             print(session["basket"])
         return redirect(url_for('store'))
+    return render_template('login.html')
+
+@app.route("/remove_item", methods=["POST"])
+def remove_item():
+    print("Modificando carrito")
+    if "usuario" in session:
+        item = request.form.get("item")
+        if item:
+            basket = session.get("basket", {})
+            if item in basket:
+                del basket[item]
+                session["basket"] = basket
+                print(session["basket"])
+        return redirect(url_for('basket'))
     return render_template('login.html')
 
 

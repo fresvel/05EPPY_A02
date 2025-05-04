@@ -14,14 +14,42 @@
             </tr>
         </thead>
         <tbody>
-<!--         <p>Total: </p> -->
-
-            
+            {% if session["basket"] %}
+            {% for item in basket_items %}
+            <tr>
+                <td>{{ item.product_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.total_price }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('remove_item') }}">
+                        <input type="hidden" name="item" value="{{ item.id }}">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr><td colspan="5">Tu carrito está vacío.</td></tr>
+            {% endif %}
         </tbody>
     </table>
-    <div class="basket-summary">
-<!--         <p>Total: </p> -->
 
+    <form method="post" action="{{ url_for('bought') }}">
+    <div class="basket-summary mt-4">
+        <div class="shipping-address mt-4">
+            <h2>Dirección de Envío</h2>
+                {#{ csrf_token() }#}
+                <div class="form-group">
+                    <label for="shipping_address">Dirección:</label>
+                    <textarea cols="50" id="shipping_address" name="address" class="form-control" required></textarea>
+                </div>
+        </div>
+        <p>Total: {{ basket_total }}</p>
+        <input type="hidden" name="total" value="{{ basket_total }}">
+        <button type="submit" class="btn btn-primary">Finalizar</button>
     </div>
+    </form>
+
 </div>
 {% endblock %}
