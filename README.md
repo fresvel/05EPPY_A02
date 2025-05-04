@@ -7,7 +7,8 @@
 - 4.- Clonar el repositorio desde https://github.com/fresvel/05EPPY_A01
 - 5.- Entrar en el directorio 05EPPY_A01
 - 6.- Compilar
-- 7.- Instalar
+- 7.- Instalar 
+
 
 ```bash
 pip install setuptools wheel build
@@ -18,7 +19,7 @@ make install
 coockie-clicker
 ```
 
-En esta isntalación es necesario ingresar por cmd la ruta del driver que se puede descargar desde: https://googlechromelabs.github.io/chrome-for-testing/
+En esta instalación is necesario ingresar por cmd la ruta del driver que se puede descargar desde: https://googlechromelabs.github.io/chrome-for-testing/
 
 
 ## Instalación en Entorno Pipenv
@@ -35,3 +36,14 @@ coockie-clicker
 ```
 
 De forma posterior le solicitará la ruta de acceso al driver (Chrome for testing). Se debe ingresar la ruta absoluta
+
+
+## Estructura
+
+
+| Página                                      | URL                              |
+|---------------------------------------------|----------------------------------|
+| Página de inicio                            | localhost:8000/home             |
+| Página de lista de productos                | localhost:8000/store            |
+| Página de resumen de compras, dirección de envío y finalizar | localhost:8000/basket           |
+| Página de transacción realizada con éxito   | localhost:8000/bought           |

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block main %}
+<header>
+    <h1>¡Gracias por tu compra!</h1>
+</header>
+<main>
+    <section>
+        <h2>Detalles de tu compra</h2>
+        <ul>
+            {% for item in purchased_items %}
+            <li>{{ item.name }} - {{ item.quantity }} x {{ item.price }} {{ currency }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Total:</strong> {{ total_price }} {{ currency }}</p>
+    </section>
+    <section>
+        <a href="/">Volver a la tienda</a>
+    </section>
+</main>
+{% endblock %}

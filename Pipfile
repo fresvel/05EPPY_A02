@@ -4,6 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+build = "==1.2.2.post1"
+importlib-metadata = "==8.7.0"
+packaging = "==25.0"
+pyproject-hooks = "==1.2.0"
+tomli = "==2.2.1"
+zipp = "==3.21.0"
+flask = "*"
+selenium = "*"
+web-store = {file = ".", editable = true}
 
 [dev-packages]
 

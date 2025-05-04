@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web_store"
+version = "0.1.0"
+description = "Página web para la tienda de productos"
+authors = [
+    { name = "Homero Velasteguí Izurieta", email = "fresvel@outlook.com" }
+]
+license = { text = "Apache 2.0" }
+
+dependencies = [
+"build==1.2.2.post1; python_version >= '3.8'",
+"importlib-metadata==8.7.0; python_version >= '3.9'",
+"packaging==25.0; python_version >= '3.8'",
+"pyproject-hooks==1.2.0; python_version >= '3.7'",
+"setuptools==80.3.0; python_version >= '3.9'",
+"tomli==2.2.1; python_version >= '3.8'",
+"wheel==0.45.1; python_version >= '3.8'",
+"zipp==3.21.0; python_version >= '3.9'"
+]
+
+[project.scripts]
+web_store = "web_store.__main__:main"
+web_store_run= "web_store.run_app:run_app" 
+test = "web_store.unit_test.unit_test:main"
+
+[tool.setuptools.package-data]
+#"cookie_clicker" = ["data/*.json"]

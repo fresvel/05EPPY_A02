@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block main %}
+<div class="basket-container">
+    <h1>Carrito de Compras</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- Aquí se iteran los elementos del carrito
+            {% if basket_items %}
+            {% for item in basket_items %}
+            <tr>
+                <td>{{ item.product_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.total_price }}</td>
+                <td>
+                    <form method="post" action="{% url 'remove_from_basket' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %} -->
+        </tbody>
+    </table>
+    <div class="basket-summary">
+        <!--<p>Total: {{ basket_total }}</p>
+         <a href="{% url 'checkout' %}" class="btn">Proceder al Pago</a>-->
+    </div>
+</div>
+{% endblock %}

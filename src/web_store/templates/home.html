@@ -1,0 +1,61 @@
+{% extends "index.html" %}
+
+{% block main %}
+<div class="store-home">
+    <div class="navigation-panel">
+        <h1>Bienvenido a nuestra Tienda</h1>
+        <p>Explora nuestros productos y encuentra lo que necesitas.</p>
+    </div>
+    <div class="navigation-panel">
+        <h2>Explora la Tienda</h2>
+        <div class="button-grid">
+            <button class="square-button" onclick="location.href='/store'">Electrónica</button>
+            <button class="square-button" onclick="location.href='/building'">Ropa</button>
+            <button class="square-button" onclick="location.href='/building'">Hogar</button>
+            <button class="square-button" onclick="location.href='/building'">Deportes</button>
+        </div>
+    </div>
+
+    <style>
+        .square-button {
+            background-color: #87CEFA; /* Light blue */
+        }
+
+        .square-button:hover {
+            background-color: #4682B4; /* Steel blue */
+        }
+    </style>
+
+    <style>
+        .navigation-panel {
+            text-align: center;
+        }
+
+        .button-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .square-button {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007BAA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .square-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</div>
+{% endblock %}

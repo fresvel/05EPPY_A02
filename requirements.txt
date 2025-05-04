@@ -1,0 +1,9 @@
+-i https://pypi.org/simple
+build==1.2.2.post1; python_version >= '3.8'
+importlib-metadata==8.7.0; python_version >= '3.9'
+packaging==25.0; python_version >= '3.8'
+pyproject-hooks==1.2.0; python_version >= '3.7'
+setuptools==80.3.0; python_version >= '3.9'
+tomli==2.2.1; python_version >= '3.8'
+wheel==0.45.1; python_version >= '3.8'
+zipp==3.21.0; python_version >= '3.9'
