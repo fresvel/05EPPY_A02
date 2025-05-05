@@ -16,28 +16,14 @@ git clone https://github.com/fresvel/05EPPY_A01
 cd 05EPPY_A01
 make build
 make install
-coockie-clicker
-```
-
-En esta instalación is necesario ingresar por cmd la ruta del driver que se puede descargar desde: https://googlechromelabs.github.io/chrome-for-testing/
-
-
-## Instalación en Entorno Pipenv
-Al compilar con los comandos de arriba se crea un directorio dist con los archivos .whl y tar.gz, para instalar la aplicación copiar los archivos whl y tar.gz a un nuevo directorio y ejecutar:
-```bash
-pipenv shell
-pip install cookie_clicker-0.1.0-py3-none-any.whl
+web_store
 ```
 ## Ejecución
 Para iniciar la aplicación, ejecutar:
 
 ```bash
-coockie-clicker
+web_store
 ```
-
-De forma posterior le solicitará la ruta de acceso al driver (Chrome for testing). Se debe ingresar la ruta absoluta
-
-
 ## Estructura
 
 
@@ -47,3 +33,8 @@ De forma posterior le solicitará la ruta de acceso al driver (Chrome for testin
 | Página de lista de productos                | localhost:8000/store            |
 | Página de resumen de compras, dirección de envío y finalizar | localhost:8000/basket           |
 | Página de transacción realizada con éxito   | localhost:8000/bought           |
+
+## Detalles
+
+Esta es una página web se prueba, no existe una base de datos en el backend. Para acceder
+se puede usar cualquier usuario y contraseña.

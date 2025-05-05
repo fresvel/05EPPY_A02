@@ -13,6 +13,7 @@ zipp = "==3.21.0"
 flask = "*"
 selenium = "*"
 web-store = {file = ".", editable = true}
+flask-wtf = "*"
 
 [dev-packages]
 

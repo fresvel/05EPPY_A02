@@ -28,4 +28,4 @@ web_store_run= "web_store.run_app:run_app"
 test = "web_store.unit_test.unit_test:main"
 
 [tool.setuptools.package-data]
-#"cookie_clicker" = ["data/*.json"]
+"web_store" = ["static/img/*", "templates/*"]
